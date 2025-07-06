@@ -57,9 +57,19 @@ npm run dev
 ```
 src/
 ├── components/     # React components
+│   ├── ui/        # UI components (Button, Card, Input, Badge)
+│   ├── MapboxMap.tsx
+│   └── HotelCard.tsx
 ├── data/          # Hotel data (JSON)
-├── hooks/         # Custom React hooks
 ├── lib/           # Utility functions
 └── pages/         # Page components
 ```
+
+## Usage
+
+- **Search**: Use the search bar to find hotels by name or address
+- **Filter**: Use price range filters (Budget, Mid-range, Luxury)
+- **Map Interaction**: Click hotel markers to see details and select hotels
+- **Sidebar**: View hotel cards and click "Website" buttons (non-functional)
+- **Navigation**: Map popup "View Details" buttons scroll to the selected hotel in the sidebar
 
