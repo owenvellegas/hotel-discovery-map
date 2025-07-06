@@ -54,6 +54,7 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isSelected, onClick }) => 
           : 'hover:shadow-xl bg-white/80 backdrop-blur-sm border-white/30'
       }`}
       onClick={onClick}
+      data-hotel-id={hotel.hotel_id}
     >
       <CardContent className="p-0 overflow-hidden">
         <div className="relative">
@@ -143,9 +144,13 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isSelected, onClick }) => 
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
                   : 'bg-gradient-to-r from-slate-600 to-slate-700 text-white hover:from-slate-700 hover:to-slate-800'
               }`}
+              onClick={(e) => {
+                e.stopPropagation();
+                // Do nothing - just prevent the card click
+              }}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
-              View Details
+              Website
             </Button>
           </div>
         </div>

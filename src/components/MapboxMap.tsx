@@ -77,7 +77,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/dark-v11',
+      style: 'mapbox://styles/mapbox/streets-v12',
       center: [-122.3351, 47.6097], // Seattle downtown center
       zoom: 13,
       pitch: 45,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,6 +37,7 @@ const Index = () => {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [priceFilter, setPriceFilter] = useState<'all' | 'budget' | 'mid' | 'luxury'>('all');
+  const hotelListRef = useRef<HTMLDivElement>(null);
 
   const filteredHotels = seattleHotels.filter(hotel => {
     const matchesSearch = hotel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -49,6 +50,19 @@ const Index = () => {
     
     return matchesSearch && matchesPrice;
   });
+
+  // Scroll to selected hotel when it changes
+  useEffect(() => {
+    if (selectedHotel && hotelListRef.current) {
+      const hotelElement = hotelListRef.current.querySelector(`[data-hotel-id="${selectedHotel.hotel_id}"]`);
+      if (hotelElement) {
+        hotelElement.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }
+    }
+  }, [selectedHotel]);
 
 
 
@@ -154,7 +168,7 @@ const Index = () => {
             </Card>
 
             {/* Hotel List */}
-            <div className="space-y-4 overflow-y-auto max-h-[calc(100vh-400px)] pr-2">
+            <div ref={hotelListRef} className="space-y-4 overflow-y-auto max-h-[calc(100vh-400px)] pr-2">
               {filteredHotels.length === 0 ? (
                 <Card className="bg-white/80 backdrop-blur-md border-white/20 shadow-xl">
                   <CardContent className="p-12 text-center">
