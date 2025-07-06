@@ -99,10 +99,10 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8 pb-16">
-        <div className="grid lg:grid-cols-3 gap-8 min-h-[calc(100vh-280px)]">
+      <div className="container mx-auto px-4 py-6 pb-12">
+        <div className="grid lg:grid-cols-3 gap-6 min-h-[calc(100vh-240px)]">
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-4">
             {/* Search and Filters */}
             <Card className="bg-white/80 backdrop-blur-md border-white/20 shadow-xl">
               <CardHeader className="pb-4">
@@ -113,7 +113,7 @@ const Index = () => {
                   Search & Filter
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4">
                 <div className="relative">
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <Input
@@ -124,12 +124,12 @@ const Index = () => {
                   />
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
                     <Filter className="w-4 h-4" />
                     Price Range
                   </label>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2">
                     <Button
                       size="sm"
                       variant={priceFilter === 'all' ? 'default' : 'outline'}
@@ -168,7 +168,7 @@ const Index = () => {
             </Card>
 
             {/* Hotel List */}
-            <div ref={hotelListRef} className="space-y-4 overflow-y-auto max-h-[calc(100vh-400px)] pr-2">
+            <div ref={hotelListRef} className="space-y-3 overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
               {filteredHotels.length === 0 ? (
                 <Card className="bg-white/80 backdrop-blur-md border-white/20 shadow-xl">
                   <CardContent className="p-12 text-center">

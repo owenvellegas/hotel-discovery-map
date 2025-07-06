@@ -95,8 +95,8 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isSelected, onClick }) => 
           </div>
         </div>
         
-        <div className="p-6">
-          <div className="mb-4">
+        <div className="p-4">
+          <div className="mb-3">
             <h3 className="font-bold text-xl text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
               {hotel.name}
             </h3>
@@ -112,7 +112,7 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel, isSelected, onClick }) => 
           </div>
           
           {/* Amenities */}
-          <div className="mb-6">
+          <div className="mb-4">
             <div className="flex flex-wrap gap-2">
               {hotel.amenities.slice(0, 4).map((amenity) => (
                 <Badge 

@@ -79,7 +79,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [-122.3351, 47.6097], // Seattle downtown center
-      zoom: 13,
+      zoom: 11,
       pitch: 45,
     });
 
@@ -163,11 +163,11 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
           'circle-radius': [
             'step',
             ['get', 'point_count'],
-            25,
+            20,
             3,
-            30,
+            25,
             5,
-            35
+            30
           ],
           'circle-stroke-width': 4,
           'circle-stroke-color': '#ffffff',
@@ -191,11 +191,11 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
           'circle-radius': [
             'step',
             ['get', 'point_count'],
-            35,
+            30,
             3,
-            40,
+            35,
             5,
-            45
+            40
           ],
           'circle-opacity': 0.3,
           'circle-stroke-width': 0
@@ -233,7 +233,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
             ['>=', ['get', 'price'], 1000], '#f97316', // orange for mid-range ($1000-1499)
             '#10b981' // green for budget (<$1000)
           ],
-          'circle-radius': 18,
+          'circle-radius': 14,
           'circle-stroke-width': 3,
           'circle-stroke-color': '#ffffff',
           'circle-stroke-opacity': 0.9
@@ -253,7 +253,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
             ['>=', ['get', 'price'], 1000], '#f97316', // orange for mid-range
             '#10b981' // green for budget
           ],
-          'circle-radius': 28,
+          'circle-radius': 22,
           'circle-opacity': 0.4,
           'circle-stroke-width': 0
         }
@@ -434,8 +434,8 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
       map.current.setPaintProperty('unclustered-point', 'circle-radius', [
         'case',
         ['==', ['get', 'id'], selectedHotel.hotel_id],
-        25, // larger for selected
-        18  // normal size for others
+        20, // larger for selected
+        14  // normal size for others
       ]);
 
       map.current.setPaintProperty('unclustered-point', 'circle-stroke-width', [
@@ -467,7 +467,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
         '#10b981' // green for budget (<$1000)
       ]);
 
-      map.current.setPaintProperty('unclustered-point', 'circle-radius', 18);
+      map.current.setPaintProperty('unclustered-point', 'circle-radius', 14);
       map.current.setPaintProperty('unclustered-point', 'circle-stroke-width', 3);
       map.current.setPaintProperty('unclustered-point', 'circle-stroke-color', '#ffffff');
     }
