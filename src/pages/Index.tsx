@@ -72,7 +72,7 @@ const Index = () => {
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Seattle Hotels
                 </h1>
-                <p className="text-sm text-slate-600 font-medium">Discover luxury accommodations</p>
+                <p className="text-sm text-slate-600 font-medium">Find your accommodations</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
