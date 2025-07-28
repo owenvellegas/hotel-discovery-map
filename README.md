@@ -2,6 +2,8 @@
 
 A web application for exploring hotels in Seattle with an interactive map interface.
 
+Deployed with Vercel [link](https://hotel-discovery-map.vercel.app)
+
 ## Features
 
 - Interactive Mapbox map with hotel markers
